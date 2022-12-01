@@ -3,6 +3,9 @@ import styles from "./Login.module.css";
 import { useEffect, useState } from "react";
 import { useAuthentication } from "../../hooks/useAuthentication";
 
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -33,14 +36,14 @@ const Login = () => {
   }, [authError]);
 
   return (
-    <div className="login-form">
-    <div className={styles.login}>
+    <div className="login__form">
+      <div className={styles.login}>
     
       <h1>Entrar</h1>
       <p>Faça o login para poder utilizar o sistema</p>
       <form onSubmit={handleSubmit}>
         <label>
-          <span>E-mail:</span>
+        
           <input
             type="email"
             name="email"
@@ -49,9 +52,10 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
+
         </label>
         <label>
-          <span>Senha:</span>
+      
           <input
             type="password"
             name="password"
@@ -63,7 +67,7 @@ const Login = () => {
         </label>
         {!loading && <button className="btn">Entrar</button>}
         {loading && (
-          <button className="btn" disabled>
+          <button className="btn" disabled> 
             Aguarde...
           </button>
         )}

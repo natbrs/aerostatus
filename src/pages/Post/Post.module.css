@@ -1,4 +1,18 @@
 .post_container {
+  margin-top: 52px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+  margin-left:500px;
+  margin-right:500px;
+  border-radius: 15px;
+  height: 700px;
+}
+
+.post_container  h1{
+  font-size: 25px;
+  padding: 30px;
+}
+
+.post_container {
   text-align: center;
 }
 
@@ -11,10 +25,43 @@
   justify-content: center;
 }
 
+.post_container p {
+   text-align: justify;
+   margin-left: 20px;
+   margin-right: 20px;
+}
+
+.post_container h2{
+   font-size: 18px;
+}
 .tags p {
   margin-right: 1em;
 }
 
 .tags span {
   font-weight: bold;
+}
+
+
+.post_container select {
+     width: 60%;
+    height: 60px;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+
+    outline: 0;
+    border: 0px;
+    z-index: 1;
+    font-size: 19px;
+    border-radius: 10px;
+    margin-top: 18px;
+    margin-bottom: 17px;
+    margin-left:100px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+
+}
+
+
+.PostDetail{
+  height: 670px;
 }

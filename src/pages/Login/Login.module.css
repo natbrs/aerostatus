@@ -1,6 +1,6 @@
 .login {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 .login h1{
@@ -20,3 +20,58 @@
   min-height: 60vh;
   margin-bottom: 5em;
 }
+
+.login input {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+  box-sizing: border-box;
+  border: 0px;
+  margin-left: -10px;
+  height: 71px;
+  margin-bottom: 1px;
+  padding: 0.9em 1em;
+  border-radius: 6px;
+  background-color: transparent;
+  z-index: 1;
+}
+
+ input::placeholder{ 
+  color: #555555;
+  opacity: 50%;
+  font-size: 15.5px;
+}
+
+.login input:not(:placeholder-shown) + label{
+  transform: translateY(-14px) scale(.8);
+}
+
+.login button:hover {
+  
+  background-color: #c84503;
+
+}
+
+
+.login button {
+  margin-top: 7px;
+  background-color: #ea6423;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 110px;
+  font-weight: bold;
+  border: none;
+  padding: 20px 15px;
+  font-size: 1em;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+}
+
+input:not(:placeholder-shown){
+  border-bottom: rgb(255, 169, 82) 5px solid;
+}
+
+input:not(:placeholder-shown) + label{
+  transform: translateY(-14px) scale(.8);
+}
+

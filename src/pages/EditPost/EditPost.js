@@ -82,7 +82,7 @@ const EditPost = () => {
     <div className={styles.edit_post}>
       {post && (
         <>
-          <h2>Editando post: {post.title}</h2>
+          <h2>Editando defeito: {post.title}</h2>
           <p>Altere os dados do post como desejar</p>
           <form onSubmit={handleSubmit}>
             <label>
@@ -96,6 +96,23 @@ const EditPost = () => {
                 value={title}
               />
             </label>
+            <label>
+              <span>URL da imagem:</span>
+              <input
+                type="text"
+                name="image"
+                required
+                placeholder="Insira uma imagem que representa seu post"
+                onChange={(e) => setImage(e.target.value)}
+                value={image}
+              />
+            </label>
+            <p className={styles.preview_title}>Preview da imagem atual:</p>
+            <img
+              className={styles.image_preview}
+              src={post.image}
+              alt={post.title}
+            />
             <label>
               <span>Conteúdo:</span>
               <textarea
@@ -118,34 +135,18 @@ const EditPost = () => {
               />
             </label>
             <label>
-              <span>Tags:</span>
-              <select 
-                name="role"  
-                onChange={(e) => setRole(e.target.value)} 
-                value={role}>
-                  <option>Selecione uma opção</option>
-                  <option value="NÍVEL: B (baixa) 😅">NÍVEL: B (baixa) 😅</option>    
-                  <option value="NÍVEL: M (média) 😨">NÍVEL: M (média) 😨</option>
-                  <option value="NÍVEL: A (alta) 💀">NÍVEL: A (alta) 💀</option>         
-            </select>
-            </label>
             <label>
-              <span>URL da imagem:</span>
-              <input
-                type="text"
-                name="image"
-                required
-                placeholder="Insira uma imagem que representa seu post"
-                onChange={(e) => setImage(e.target.value)}
-                value={image}
-              />
+            <select 
+              name="role"  
+              onChange={(e) => setRole(e.target.value)} 
+              value={role}>
+                <option>Selecione uma opção</option>
+                <option value="NÍVEL: B (baixa) 😅">NÍVEL: B (baixa) 😅</option>    
+                <option value="NÍVEL: M (média) 😨">NÍVEL: M (média) 😨</option>
+                <option value="NÍVEL: A (alta) 💀">NÍVEL: A (alta) 💀</option>          
+           </select>
+        </label>
             </label>
-            <p className={styles.preview_title}>Preview da imagem atual:</p>
-            <img
-              className={styles.image_preview}
-              src={post.image}
-              alt={post.title}
-            />
             {!response.loading && <button className="btn">Editar</button>}
             {response.loading && (
               <button className="btn" disabled>

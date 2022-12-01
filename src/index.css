@@ -57,31 +57,33 @@ label span {
 }
 
 input,
-textarea, select{
+textarea{
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
   box-sizing: border-box;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  padding: 0.8em 0em;
+  border: 0px;
+  width: 106%;
+  margin-left: -13px;
+  height: 71px;
+  margin-bottom: 11px;
+  padding: 0.9em 1em;
+  border-radius: 6px;
   background-color: transparent;
+  z-index: 1;
 }
+
+input,
+textarea::placeholder{
+  color: rgb(0, 0, 0);
+}
+
 
 input::placeholder,
 textarea::placeholder {
-  color: #aaa;
+  color: #555555;
+  opacity: 50%;
+  font-size: 15.5px;
 }
 
-.btn {
-  background-color: #1a8918;
-  color: #fff;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 10px;
-  width: 120px;
-  font-weight: bold;
-  border: none;
-  padding: 10px 15px;
-  font-size: 1em;
-}
 
 .btn.btn-dark {
   background-color: #000;
@@ -119,4 +121,15 @@ button[disabled] {
   border: 1px solid #f5c6cb;
   padding: 5px;
   border-radius: 5px;
+}
+
+svg {
+  margin-top: -100px;
+  position: fixed;
+}
+
+.container img {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  height: 300px;
 }

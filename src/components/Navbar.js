@@ -1,10 +1,14 @@
+// Importação de hooks, contexts & etc
 import { NavLink } from "react-router-dom";
-
 import { useAuthentication } from "../hooks/useAuthentication";
-
 import { useAuthValue } from "../contexts/AuthContext";
-
 import styles from "./Navbar.module.css";
+
+
+// Importação de fonts e customização
+import ReactDOM from 'react-dom';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Importação de imagens
 import logo from "./img/logo.png"
@@ -17,12 +21,10 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <NavLink className={styles.brand} to="/login">
         <div className={styles.logo}>
-          <img src={ logo }  />
         Aero <span>Status</span>
         </div>
       </NavLink>
       <ul className={styles.links_list}>
-       
         {!user && (
           <>
             <li>
@@ -30,7 +32,7 @@ const Navbar = () => {
                 to="/login"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
-                Entrar
+                  <FontAwesomeIcon icon="fa-right-to-bracket" /> Entrar
               </NavLink>
             </li>
             <li>
@@ -50,7 +52,8 @@ const Navbar = () => {
               to="/"
             className={({ isActive }) => (isActive ? styles.active : "")}
             >
-              Home
+            <FontAwesomeIcon icon={faHouse} />
+              Defeitos
               </NavLink>
             </li>
             <li>
@@ -58,7 +61,7 @@ const Navbar = () => {
                 to="/posts/create"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
-                Novo post
+                Novo Defeito
               </NavLink>
             </li>
             <li>
@@ -71,14 +74,6 @@ const Navbar = () => {
             </li>
           </>
         )}
-        <li>
-          <NavLink
-            to="/about"
-            className={({ isActive }) => (isActive ? styles.active : "")}
-          >
-            Sobre
-          </NavLink>
-        </li>
         {user && (
           <li>
             <button onClick={logout}>Sair</button>

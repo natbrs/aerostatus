@@ -29,3 +29,25 @@
 .noposts a {
   padding: 10px 25px;
 }
+
+
+.home button {
+  margin-top:1px;
+  background-color: #ea6423!important;
+  color: #fff;
+  height: 72px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px!important;
+  width: 80px;
+  font-weight: bold;
+  border: none;
+  font-size: 1em;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+   
+}
+
+ .home img {
+  height: 200px;
+}

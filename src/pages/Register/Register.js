@@ -14,9 +14,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setError("");
-
     const user = {
       displayName,
       email,
@@ -24,28 +22,27 @@ const Register = () => {
     };
 
     if (password !== confirmPassword) {
-      setError("As senhas precisam ser iguais.");
+      setError("Senhas não conferem!");
       return;
     }
-
     const res = await createUser(user);
 
     console.log(res);
   };
-
   useEffect(() => {
     if (authError) {
       setError(authError);
     }
   }, [authError]);
 
+
   return (
+    
     <div className={styles.register}>
-      <h1>Cadastre-se para postar</h1>
-      <p>Crie seu usuário e compartilhe suas histórias</p>
+      <h1>Cadastro</h1>
+      <p>Faça o cadastro para poder utilizar o sistema</p>
       <form onSubmit={handleSubmit}>
         <label>
-          <span>Nome:</span>
           <input
             type="text"
             name="displayName"
@@ -56,7 +53,6 @@ const Register = () => {
           />
         </label>
         <label>
-          <span>E-mail:</span>
           <input
             type="email"
             name="email"
@@ -67,7 +63,6 @@ const Register = () => {
           />
         </label>
         <label>
-          <span>Senha:</span>
           <input
             type="password"
             name="password"
@@ -78,7 +73,6 @@ const Register = () => {
           />
         </label>
         <label>
-          <span>Confirmação de senha:</span>
           <input
             type="password"
             name="confirmPassword"
@@ -88,10 +82,10 @@ const Register = () => {
             value={confirmPassword}
           />
         </label>
-        {!loading && <button className="btn">Entrar</button>}
+        {!loading && <button className="btn">Cadastrar</button>}
         {loading && (
           <button className="btn" disabled>
-            Aguarde...
+            Processando...
           </button>
         )}
         {error && <p className="error">{error}</p>}
