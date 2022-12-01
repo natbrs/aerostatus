@@ -1,7 +1,22 @@
 .login {
   text-align: center;
+  margin-top: 50px;
+}
+
+.login h1{
+
+  margin-top: 6px;
 }
 
 .login p {
   color: #aaa;
+}
+
+.login-form {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.container {
+  min-height: 60vh;
+  margin-bottom: 5em;
 }

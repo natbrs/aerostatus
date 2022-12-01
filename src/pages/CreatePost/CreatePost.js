@@ -10,6 +10,7 @@ const CreatePost = () => {
   const [image, setImage] = useState("");
   const [body, setBody] = useState("");
   const [tags, setTags] = useState([]);
+  const [role, setRole] = useState("");
   const [formError, setFormError] = useState("");
 
   const { user } = useAuthValue();
@@ -44,6 +45,7 @@ const CreatePost = () => {
       image,
       body,
       tags: tagsArray,
+      role,
       uid: user.uid,
       createdBy: user.displayName,
     });
@@ -55,6 +57,7 @@ const CreatePost = () => {
       image,
       body,
       tags: tagsArray,
+      role,
       uid: user.uid,
       createdBy: user.displayName,
     });
@@ -79,17 +82,6 @@ const CreatePost = () => {
           />
         </label>
         <label>
-          <span>URL da imagem:</span>
-          <input
-            type="text"
-            name="image"
-            required
-            placeholder="Insira uma imagem que representa seu post"
-            onChange={(e) => setImage(e.target.value)}
-            value={image}
-          />
-        </label>
-        <label>
           <span>Conteúdo:</span>
           <textarea
             name="body"
@@ -108,6 +100,28 @@ const CreatePost = () => {
             placeholder="Insira as tags separadas por vírgula"
             onChange={(e) => setTags(e.target.value)}
             value={tags}
+          />
+        </label>
+        <label>
+           <span>Nível de gravidade:</span>
+           <select 
+              name="role"  
+              onChange={(e) => setRole(e.target.value)} 
+              value={role}>
+                <option>Selecione uma opção</option>
+                <option value="NÍVEL: B (baixa) 😅">NÍVEL: B (baixa) 😅</option>    
+                <option value="NÍVEL: M (média) 😨">NÍVEL: M (média) 😨</option>
+                <option value="NÍVEL: A (alta) 💀">NÍVEL: A (alta) 💀</option>          
+           </select>
+        </label>
+        <label>
+        <input
+            type="file"
+            name="image"
+            required
+            placeholder="Insira uma imagem que representa seu post"
+            onChange={(e) => setImage(e.target.value)}
+            value={image}
           />
         </label>
         {!response.loading && <button className="btn">Criar post!</button>}

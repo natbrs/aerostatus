@@ -15,21 +15,14 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <NavLink className={styles.brand} to="/">
+      <NavLink className={styles.brand} to="/login">
         <div className={styles.logo}>
           <img src={ logo }  />
         Aero <span>Status</span>
         </div>
       </NavLink>
       <ul className={styles.links_list}>
-        <li>
-          <NavLink
-            to="/"
-            className={({ isActive }) => (isActive ? styles.active : "")}
-          >
-            Home
-          </NavLink>
-        </li>
+       
         {!user && (
           <>
             <li>
@@ -52,6 +45,14 @@ const Navbar = () => {
         )}
         {user && (
           <>
+           <li>
+            <NavLink
+              to="/"
+            className={({ isActive }) => (isActive ? styles.active : "")}
+            >
+              Home
+              </NavLink>
+            </li>
             <li>
               <NavLink
                 to="/posts/create"

@@ -48,7 +48,9 @@ function App() {
           <Navbar />
           <div className="container">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" 
+                     element={user ? <Home /> : <Navigate to="/login"  />} 
+              />
               <Route path="/about" element={<About />} />
               <Route
                 path="/posts/create"

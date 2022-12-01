@@ -20,7 +20,7 @@ const Dashboard = () => {
   return (
     <div className={styles.dashboard}>
       <h2>Dashboard</h2>
-      <p>Gerencie os seus posts</p>
+      <p>Gerencie seus defeitos</p>
       {posts && posts.length === 0 ? (
         <div className={styles.noposts}>
           <p>Não foram encontrados posts</p>

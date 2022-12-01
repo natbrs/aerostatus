@@ -16,6 +16,7 @@ const EditPost = () => {
   const [image, setImage] = useState("");
   const [body, setBody] = useState("");
   const [tags, setTags] = useState([]);
+  const [role, setRole] = useState("");
   const [formError, setFormError] = useState("");
 
   // fill form data
@@ -58,6 +59,7 @@ const EditPost = () => {
       image,
       body,
       tags: tagsArray,
+      role,
     });
 
     const data = {
@@ -65,6 +67,7 @@ const EditPost = () => {
       image,
       body,
       tags: tagsArray,
+      role,
     };
 
     console.log(post);
@@ -94,23 +97,6 @@ const EditPost = () => {
               />
             </label>
             <label>
-              <span>URL da imagem:</span>
-              <input
-                type="text"
-                name="image"
-                required
-                placeholder="Insira uma imagem que representa seu post"
-                onChange={(e) => setImage(e.target.value)}
-                value={image}
-              />
-            </label>
-            <p className={styles.preview_title}>Preview da imagem atual:</p>
-            <img
-              className={styles.image_preview}
-              src={post.image}
-              alt={post.title}
-            />
-            <label>
               <span>Conteúdo:</span>
               <textarea
                 name="body"
@@ -131,6 +117,35 @@ const EditPost = () => {
                 value={tags}
               />
             </label>
+            <label>
+              <span>Tags:</span>
+              <select 
+                name="role"  
+                onChange={(e) => setRole(e.target.value)} 
+                value={role}>
+                  <option>Selecione uma opção</option>
+                  <option value="NÍVEL: B (baixa) 😅">NÍVEL: B (baixa) 😅</option>    
+                  <option value="NÍVEL: M (média) 😨">NÍVEL: M (média) 😨</option>
+                  <option value="NÍVEL: A (alta) 💀">NÍVEL: A (alta) 💀</option>         
+            </select>
+            </label>
+            <label>
+              <span>URL da imagem:</span>
+              <input
+                type="text"
+                name="image"
+                required
+                placeholder="Insira uma imagem que representa seu post"
+                onChange={(e) => setImage(e.target.value)}
+                value={image}
+              />
+            </label>
+            <p className={styles.preview_title}>Preview da imagem atual:</p>
+            <img
+              className={styles.image_preview}
+              src={post.image}
+              alt={post.title}
+            />
             {!response.loading && <button className="btn">Editar</button>}
             {response.loading && (
               <button className="btn" disabled>
