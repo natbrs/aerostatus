@@ -1,7 +1,7 @@
 <h1 align="center">
 <img src="https://i.imgur.com/DPXjaGF.png" width="400px">
-[![License]()]
-[![Status]()]
+[![License](https://img.shields.io/github/license/watatomo/wttm_qtbot)](https://github.com/watatomo/wttm_qtbot/blob/master/LICENSE)
+[![Status](https://img.shields.io/badge/status-running-brightgreen.svg)](https://twitter.com/wttm_qtbot)
 
 
 
