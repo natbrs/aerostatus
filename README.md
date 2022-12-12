@@ -1,6 +1,7 @@
 <h1 align="center">
 <img src="https://i.imgur.com/DPXjaGF.png" width="400px">
-
+[![License]()]
+[![Status]()]
 
 
 
