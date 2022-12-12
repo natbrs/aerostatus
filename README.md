@@ -3,3 +3,6 @@
 
 ## Introdução
 > Aero Status é uma aplicação em React JS, desenvolvida para a empresa de aviação "Acme Airlines", com o objetivo de solucionar os problemas técnicos da aeronave, fornecendo uma plataforma aonde cada comissário poderá relatar um defeito específico.
+
+Utilizados: 
+
